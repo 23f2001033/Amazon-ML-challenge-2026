@@ -1,0 +1,22 @@
+import numpy as np, polars as pl
+m = pl.read_csv("/home/ubuntu/er/sub_v6fr3t/matching_results.tsv", separator="\t", schema_overrides={"matched_entity_ids": pl.String}).with_columns(pl.col("matched_entity_ids").fill_null(""))
+s1 = pl.read_parquet("/home/ubuntu/er/data/prepared/test_s1.parquet", columns=["entity_id", "country"]).rename({"entity_id": "source1_entity_id"})
+m = m.join(s1, on="source1_entity_id").filter(pl.col("country") == "France")
+v = pl.read_parquet("/home/ubuntu/er/sub_v6fr3s/france_veto_pairs.parquet")
+v = v.with_columns(pl.col("mid").str.slice(0, 2).alias("src"))
+for src in ("S2", "S3"):
+    m2 = m.with_columns(pl.col("matched_entity_ids").str.count_matches(f"{src}-").alias("n"))
+    P = np.bincount(m2["n"].to_numpy(), minlength=10)[:10].astype(float); P /= P.sum()
+    k = np.arange(10)
+    noise = k * P; noise /= noise.sum()                      # true copy: size-biased count (including it)
+    distr = np.r_[0, P[:-1]]                                  # extra record: base count + 1
+    vs = v.filter(pl.col("src") == src).group_by("s1").len("nv").filter(pl.col("nv") == 1).rename({"s1": "source1_entity_id"})
+    obs = m2.join(vs, on="source1_entity_id")["n"].to_numpy()
+    O = np.bincount(obs, minlength=10)[:10].astype(float); O /= O.sum()
+    print(f"{src}: S1s with exactly one vetoed {src} record: {len(obs):,}")
+    print("   count k        :", " ".join(f"{i:>6}" for i in range(1, 8)))
+    print("   observed       :", " ".join(f"{O[i]:6.3f}" for i in range(1, 8)))
+    print("   if TRUE copies :", " ".join(f"{noise[i]:6.3f}" for i in range(1, 8)))
+    print("   if DISTRACTORS :", " ".join(f"{distr[i]:6.3f}" for i in range(1, 8)))
+    l1 = np.abs(O[1:8] - noise[1:8]).sum(); l2 = np.abs(O[1:8] - distr[1:8]).sum()
+    print(f"   L1 distance: to true-copy model {l1:.3f} | to distractor model {l2:.3f}")

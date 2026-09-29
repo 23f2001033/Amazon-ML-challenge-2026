@@ -1,0 +1,45 @@
+shape: (2, 9)
+┌─────┬───────┬──────────┬──────────────┬────────────┬───────────┬──────────────┬────────────┬────────────┐
+│ y   ┆ len   ┆ num_jacc ┆ first_num_eq ┆ addr_ratio ┆ addr_tset ┆ addr_tset100 ┆ name_exact ┆ name_ratio │
+│ --- ┆ ---   ┆ ---      ┆ ---          ┆ ---        ┆ ---       ┆ ---          ┆ ---        ┆ ---        │
+│ i64 ┆ u32   ┆ f64      ┆ f64          ┆ f64        ┆ f64       ┆ f64          ┆ f64        ┆ f64        │
+╞═════╪═══════╪══════════╪══════════════╪════════════╪═══════════╪══════════════╪════════════╪════════════╡
+│ 0   ┆ 3507  ┆ 0.099    ┆ 0.152        ┆ 80.7       ┆ 90.9      ┆ 0.012        ┆ 0.012      ┆ 88.1       │
+│ 1   ┆ 31107 ┆ 0.698    ┆ 0.813        ┆ 82.8       ┆ 95.0      ┆ 0.345        ┆ 0.58       ┆ 94.6       │
+└─────┴───────┴──────────┴──────────────┴────────────┴───────────┴──────────────┴────────────┴────────────┘
+S1 | Sigrid E. Gallagher, Ph.D., PC         | 3 Oneil Road, Somerset, MA
+S2 | Corp Sigrid E. Gallagher, Ph.D., PC    | SOMERSET, MA, 14 ONEIL RD
+
+S1 | Macklin, Kilpatrick & Rangel Enbridge  | Bandera, 525 Lacey Drive, TX
+S3 | Macklin, Kilpatrick & Rangel Enbridge Ltd. | 532 Lacey Dr, Bandera, Texas
+
+S1 | All Yield                              | 1643 State Highway 164, Groesbeck, TX
+S3 | All Yield Corp                         | 1647. State Highway 164, Groesbeck, Texas
+
+S1 | Jsp Trust                              | Kerala, Room No. 3 Muttepadath Building, Padmasree Lane, Ma, Mangalam, Cochin, Door No. 34/1874 A
+S3 | Jsp Trust Private Limited              | Door No. 34/1885 A, Cochin, KL
+
+S1 | Red Marketing Pvt Ltd                  | Madhya Pradesh, Indore, 779-A Manish Puri, 103 Vishal Residency, Indore
+S3 | Red  Marketing LLP                     | 110 Vishal Residency, 779-A Manish Puri, Indore, MP
+
+S1 | Northern Care                          | 1301 Wales Drive, Unit D, Killeen, TX
+S3 | Northern Care Inc                      | 1308 Wales Drive, # D, Killeen, Texas
+
+S1 | Southern Consultants Pvt Ltd           | C/O Subodh Kumar, Sri Ganesh Path Indraprastha Colony, Majhauliya Chawk, Majhauliya, Muzaffarpur, Bihar
+S3 | Southern-Consultants Limited           | BR, No 2 C/o Subodh Kumar, Sri Ganesh Path Indraprastha Colony, Majhauliya Chawk, Majhauliya, Muzaffarpur
+
+S1 | Gulf Foods, LLC                        | Terre Haute, 1823 4th Street, IN
+S3 | Gulf-Foods, Co                         | 1825 4th St, Terre Hauute, Indiana
+
+S1 | Shaylah Pulliam Biotech                | 467 Owens Road, Prineville, OR
+S3 | Shaylah Pulliam Biotech Ltd            | 0488 Owens Rd, Prineville, Oregon
+
+S1 | Pediatric Dental Medicine of Norfolk City | VA, Norfolk City, 5124 Princess Anne Road
+S3 | Pediatric Dental Medicine of Norfolk City Ltd | 5125 Princess Anne Rd, Norffolk, Virginia
+
+S1 | Happy Ice Cream                        | 4845 Silver Sands Street, Netarts, OR
+S2 | The Happy-Ice Cream Co                 | 4854-4858 SILVER SANDS ST, NETARTS, OR
+
+S1 | Ear Nose & Throat Anchor Center Inc    | 1800 Half Street, Unit 606, Washington, DC
+S2 | Co Ear Nose & Throat Ánchor Center     | 1804-B HALF ST, WASHINGTON, DC
+

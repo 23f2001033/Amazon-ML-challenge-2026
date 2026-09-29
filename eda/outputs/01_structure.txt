@@ -1,0 +1,235 @@
+## Per-file overview
+
+### train_s1: rows=2,206,821 unique_ids=2,206,821 prefixes=[{'entity_id': 'S1-', 'count': 2206821}]
+null counts: {'entity_id': 0, 'business_name': 0, 'business_address': 0, 'country': 0}
+literal 'null'/'nan'/'None' strings: {'business_name': 0, 'business_address': 0}
+shape: (2, 2)
+┌─────────┬─────────┐
+│ country ┆ count   │
+│ ---     ┆ ---     │
+│ str     ┆ u32     │
+╞═════════╪═════════╡
+│ US      ┆ 1323633 │
+│ India   ┆ 883188  │
+└─────────┴─────────┘
+exact duplicate (name,address,country) rows: 0
+duplicate names: 667592
+id numeric range: 217 999998822 non-numeric: 0
+
+### train_s2: rows=5,034,616 unique_ids=5,034,616 prefixes=[{'entity_id': 'S2-', 'count': 5034616}]
+null counts: {'entity_id': 0, 'business_name': 0, 'business_address': 168967, 'country': 0}
+literal 'null'/'nan'/'None' strings: {'business_name': 6, 'business_address': 0}
+shape: (2, 2)
+┌─────────┬─────────┐
+│ country ┆ count   │
+│ ---     ┆ ---     │
+│ str     ┆ u32     │
+╞═════════╪═════════╡
+│ US      ┆ 3016817 │
+│ India   ┆ 2017799 │
+└─────────┴─────────┘
+exact duplicate (name,address,country) rows: 25873
+duplicate names: 632607
+id numeric range: 576 999999727 non-numeric: 0
+
+### train_s3: rows=5,285,603 unique_ids=5,285,603 prefixes=[{'entity_id': 'S3-', 'count': 5285603}]
+null counts: {'entity_id': 0, 'business_name': 0, 'business_address': 175916, 'country': 0}
+literal 'null'/'nan'/'None' strings: {'business_name': 18, 'business_address': 0}
+shape: (2, 2)
+┌─────────┬─────────┐
+│ country ┆ count   │
+│ ---     ┆ ---     │
+│ str     ┆ u32     │
+╞═════════╪═════════╡
+│ US      ┆ 3170056 │
+│ India   ┆ 2115547 │
+└─────────┴─────────┘
+exact duplicate (name,address,country) rows: 18860
+duplicate names: 633994
+id numeric range: 10 999999866 non-numeric: 0
+
+### test_s1: rows=1,732,544 unique_ids=1,732,544 prefixes=[{'entity_id': 'S1-', 'count': 1732544}]
+null counts: {'entity_id': 0, 'business_name': 0, 'business_address': 0, 'country': 0}
+literal 'null'/'nan'/'None' strings: {'business_name': 0, 'business_address': 0}
+shape: (3, 2)
+┌─────────┬────────┐
+│ country ┆ count  │
+│ ---     ┆ ---    │
+│ str     ┆ u32    │
+╞═════════╪════════╡
+│ India   ┆ 809986 │
+│ US      ┆ 663106 │
+│ France  ┆ 259452 │
+└─────────┴────────┘
+exact duplicate (name,address,country) rows: 0
+duplicate names: 493677
+id numeric range: 401 999998909 non-numeric: 0
+
+### test_s2: rows=4,887,273 unique_ids=4,887,273 prefixes=[{'entity_id': 'S2-', 'count': 4887273}]
+null counts: {'entity_id': 0, 'business_name': 0, 'business_address': 129408, 'country': 0}
+literal 'null'/'nan'/'None' strings: {'business_name': 49, 'business_address': 0}
+shape: (3, 2)
+┌─────────┬─────────┐
+│ country ┆ count   │
+│ ---     ┆ ---     │
+│ str     ┆ u32     │
+╞═════════╪═════════╡
+│ India   ┆ 2312565 │
+│ US      ┆ 1871330 │
+│ France  ┆ 703378  │
+└─────────┴─────────┘
+exact duplicate (name,address,country) rows: 22641
+duplicate names: 576232
+id numeric range: 208 999999982 non-numeric: 0
+
+### test_s3: rows=5,082,316 unique_ids=5,082,316 prefixes=[{'entity_id': 'S3-', 'count': 5082316}]
+null counts: {'entity_id': 0, 'business_name': 0, 'business_address': 136098, 'country': 0}
+literal 'null'/'nan'/'None' strings: {'business_name': 61, 'business_address': 0}
+shape: (3, 2)
+┌─────────┬─────────┐
+│ country ┆ count   │
+│ ---     ┆ ---     │
+│ str     ┆ u32     │
+╞═════════╪═════════╡
+│ India   ┆ 2405000 │
+│ US      ┆ 1945701 │
+│ France  ┆ 731615  │
+└─────────┴─────────┘
+exact duplicate (name,address,country) rows: 16293
+duplicate names: 560387
+id numeric range: 5 999999995 non-numeric: 0
+
+## Ground truth
+GT rows 2206821 unique s1 2206821 all S1 in GT: True
+singletons (empty list): 123247 = 0.0558
+total positive pairs: 7638365 [{'src': 'S2', 'count': 3693619}, {'src': 'S3', 'count': 3944746}]
+
+matches per S1 (incl singletons):
+shape: (12, 2)
+┌─────┬────────┐
+│ n   ┆ count  │
+│ --- ┆ ---    │
+│ u32 ┆ u32    │
+╞═════╪════════╡
+│ 0   ┆ 123247 │
+│ 1   ┆ 119157 │
+│ 2   ┆ 375212 │
+│ 3   ┆ 530841 │
+│ 4   ┆ 484115 │
+│ 5   ┆ 321957 │
+│ 6   ┆ 164868 │
+│ 7   ┆ 63968  │
+│ 8   ┆ 18680  │
+│ 9   ┆ 4205   │
+│ 10  ┆ 534    │
+│ 11  ┆ 37     │
+└─────┴────────┘
+
+S2 matches per S1:
+shape: (6, 2)
+┌─────┬────────┐
+│ n2  ┆ count  │
+│ --- ┆ ---    │
+│ u32 ┆ u32    │
+╞═════╪════════╡
+│ 0   ┆ 287745 │
+│ 1   ┆ 789108 │
+│ 2   ┆ 652779 │
+│ 3   ┆ 333957 │
+│ 4   ┆ 119078 │
+│ 5   ┆ 24154  │
+└─────┴────────┘
+
+S3 matches per S1:
+shape: (7, 2)
+┌─────┬────────┐
+│ n3  ┆ count  │
+│ --- ┆ ---    │
+│ u32 ┆ u32    │
+╞═════╪════════╡
+│ 0   ┆ 266276 │
+│ 1   ┆ 716417 │
+│ 2   ┆ 668375 │
+│ 3   ┆ 372443 │
+│ 4   ┆ 145116 │
+│ 5   ┆ 35378  │
+│ 6   ┆ 2816   │
+└─────┴────────┘
+
+n2 x n3 crosstab (top):
+shape: (25, 3)
+┌─────┬─────┬────────┐
+│ n2  ┆ n3  ┆ len    │
+│ --- ┆ --- ┆ ---    │
+│ u32 ┆ u32 ┆ u32    │
+╞═════╪═════╪════════╡
+│ 1   ┆ 1   ┆ 269681 │
+│ 1   ┆ 2   ┆ 251224 │
+│ 2   ┆ 1   ┆ 223054 │
+│ 2   ┆ 2   ┆ 208159 │
+│ 1   ┆ 3   ┆ 140393 │
+│ 0   ┆ 0   ┆ 123247 │
+│ 2   ┆ 3   ┆ 116076 │
+│ 3   ┆ 1   ┆ 114405 │
+│ 3   ┆ 2   ┆ 105817 │
+│ 0   ┆ 1   ┆ 60407  │
+│ 3   ┆ 3   ┆ 59427  │
+│ 1   ┆ 0   ┆ 58750  │
+│ 0   ┆ 2   ┆ 57041  │
+│ 1   ┆ 4   ┆ 54575  │
+│ 2   ┆ 0   ┆ 48490  │
+│ 2   ┆ 4   ┆ 45167  │
+│ 4   ┆ 1   ┆ 40618  │
+│ 4   ┆ 2   ┆ 38338  │
+│ 0   ┆ 3   ┆ 31526  │
+│ 3   ┆ 0   ┆ 25037  │
+│ 3   ┆ 4   ┆ 23315  │
+│ 4   ┆ 3   ┆ 20852  │
+│ 1   ┆ 5   ┆ 13437  │
+│ 0   ┆ 4   ┆ 12260  │
+│ 2   ┆ 5   ┆ 10957  │
+└─────┴─────┴────────┘
+mean matches/S1: 3.4612526344456573 mean among non-singletons: 3.66599170463828
+
+S2/S3 ids appearing under >1 S1: 0
+dup within list: 0
+S2: 5,034,616 records, matched to some S1: 3,693,619 (0.7336); unmatched (distractors): 1,340,997
+S3: 5,285,603 records, matched to some S1: 3,944,746 (0.7463); unmatched (distractors): 1,340,857
+GT ids not present in source files: 0
+
+country agreement in positive pairs: 1.0
+shape: (0, 3)
+┌─────┬─────┬─────┐
+│ c1  ┆ cm  ┆ len │
+│ --- ┆ --- ┆ --- │
+│ str ┆ str ┆ u32 │
+╞═════╪═════╪═════╡
+└─────┴─────┴─────┘
+
+by country:
+shape: (2, 7)
+┌─────────┬─────────┬────────────────┬──────────────┬──────────┬──────────┬─────────────┐
+│ country ┆ n       ┆ singleton_rate ┆ mean_matches ┆ mean_s2  ┆ mean_s3  ┆ max_matches │
+│ ---     ┆ ---     ┆ ---            ┆ ---          ┆ ---      ┆ ---      ┆ ---         │
+│ str     ┆ u32     ┆ f64            ┆ f64          ┆ f64      ┆ f64      ┆ u32         │
+╞═════════╪═════════╪════════════════╪══════════════╪══════════╪══════════╪═════════════╡
+│ US      ┆ 1323633 ┆ 0.055828       ┆ 3.459057     ┆ 1.671969 ┆ 1.787088 ┆ 11          │
+│ India   ┆ 883188  ┆ 0.055878       ┆ 3.464543     ┆ 1.676364 ┆ 1.788179 ┆ 11          │
+└─────────┴─────────┴────────────────┴──────────────┴──────────┴──────────┴─────────────┘
+Traceback (most recent call last):
+  File "C:\Users\Aman\Desktop\Amazon-ML\eda\01_structure.py", line 70, in <module>
+    allg.join(s1.select(pl.col("entity_id").alias("s1"), "country"), on="s1").write_parquet("eda/outputs/gt_cardinality.parquet")
+  File "C:\Users\Aman\AppData\Local\Programs\Python\Python311\Lib\site-packages\polars\dataframe\frame.py", line 4375, in write_parquet
+    self.lazy().sink_parquet(
+  File "C:\Users\Aman\AppData\Local\Programs\Python\Python311\Lib\site-packages\polars\lazyframe\frame.py", line 3021, in sink_parquet
+    return _select_engine(engine).sink_parquet(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aman\AppData\Local\Programs\Python\Python311\Lib\site-packages\polars\lazyframe\engine.py", line 616, in sink_parquet
+    return self._finish_sink(ldf_py, lazy=lazy, optimizations=optimizations)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aman\AppData\Local\Programs\Python\Python311\Lib\site-packages\polars\lazyframe\engine.py", line 522, in _finish_sink
+    self.collect(lf, optimizations=optimizations)
+  File "C:\Users\Aman\AppData\Local\Programs\Python\Python311\Lib\site-packages\polars\lazyframe\engine.py", line 443, in collect
+    return wrap_df(ldf.collect(self.name, callback))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: The system cannot find the path specified. (os error 3): eda/outputs/gt_cardinality.parquet

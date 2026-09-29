@@ -1,0 +1,23 @@
+{
+ "s2name": "s2_blend_v6v6t_frv6",
+ "thr": 0.725,
+ "thr_by_country": {
+  "US": 0.65,
+  "India": 0.675,
+  "France": 0.65
+ },
+ "swap_veto": [
+  "France"
+ ],
+ "add_drop_noise": [
+  "France"
+ ],
+ "empty_rescue": 0.35,
+ "note": "v6fr3zc: v6fr3z + France acronym rescue + France threshold 0.65 (LOCO: zero-shot threshold shift is +/-0.15 with no fixed direction; v6fr3x LB hints 0.725->0.60 did not help France)",
+ "swap_veto_final": [
+  "France"
+ ],
+ "add_acronym": [
+  "France"
+ ]
+}

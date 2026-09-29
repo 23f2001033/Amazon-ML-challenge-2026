@@ -1,0 +1,11 @@
+{
+ "thr": 0.725,
+ "thr_by_country": {
+  "US": 0.6,
+  "India": 0.5,
+  "France": 0.725
+ },
+ "decision": "thr",
+ "france_veto": "france_veto_pairs.parquet",
+ "note": "v6fr3s: v6fr3 stack; per-country thresholds at test-like orphan density; France veto of exact-address real-word category swaps (docs/04_EXPERIMENTS.md)"
+}

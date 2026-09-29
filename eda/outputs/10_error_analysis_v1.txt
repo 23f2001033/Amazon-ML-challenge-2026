@@ -1,0 +1,127 @@
+val entities=196,781  macro F0.5=0.9769  total loss=0.0231
+shape: (6, 4)
+┌───────────────────────────────┬──────────┬──────────┬───────────────┐
+│ type                          ┆ entities ┆ loss_pts ┆ share_of_loss │
+│ ---                           ┆ ---      ┆ ---      ┆ ---           │
+│ str                           ┆ u32      ┆ f64      ┆ f64           │
+╞═══════════════════════════════╪══════════╪══════════╪═══════════════╡
+│ missed match(es) only         ┆ 28253    ┆ 0.01233  ┆ 0.535         │
+│ has matches, predicted empty  ┆ 822      ┆ 0.00418  ┆ 0.181         │
+│ extra false match(es) only    ┆ 3611     ┆ 0.00396  ┆ 0.172         │
+│ singleton given a false match ┆ 288      ┆ 0.00146  ┆ 0.063         │
+│ both FP and FN                ┆ 720      ┆ 0.00112  ┆ 0.049         │
+│ perfect                       ┆ 163087   ┆ 0.0      ┆ 0.0           │
+└───────────────────────────────┴──────────┴──────────┴───────────────┘
+
+False negatives: 34,727 pairs
+shape: (3, 2)
+┌─────────────────────────────────┬───────┐
+│ stage                           ┆ len   │
+│ ---                             ┆ ---   │
+│ str                             ┆ u32   │
+╞═════════════════════════════════╪═══════╡
+│ scored below threshold          ┆ 24936 │
+│ blocking miss (not a candidate) ┆ 9311  │
+│ lost competition to another S1  ┆ 480   │
+└─────────────────────────────────┴───────┘
+p distribution of below-threshold FNs: [{'statistic': 'count', 'value': 24936.0}, {'statistic': 'null_count', 'value': 0.0}, {'statistic': 'mean', 'value': 0.32215688165847145}, {'statistic': 'std', 'value': 0.2469192791771055}, {'statistic': 'min', 'value': 2.391666542548246e-06}, {'statistic': '25%', 'value': 0.07096564733950331}, {'statistic': '50%', 'value': 0.3030172341747253}, {'statistic': '75%', 'value': 0.5469019464885513}, {'statistic': 'max', 'value': 0.7499462846575248}]
+
+False positives: 4,841 pairs
+shape: (3, 2)
+┌─────────────────────────────────────────┬──────┐
+│ kind                                    ┆ len  │
+│ ---                                     ┆ ---  │
+│ str                                     ┆ u32  │
+╞═════════════════════════════════════════╪══════╡
+│ record matches no S1 (true distractor)  ┆ 2970 │
+│ record belongs to a dropped S1 (orphan) ┆ 1341 │
+│ record belongs to another queried S1    ┆ 530  │
+└─────────────────────────────────────────┴──────┘
+
+Record-type profile:
+shape: (3, 9)
+┌─────────────────┬────────┬────────┬───────────┬───┬───────┬─────────┬──────────┬───────────┐
+│ set             ┆ pairs  ┆ native ┆ addr_null ┆ … ┆ web   ┆ core_eq ┆ house_eq ┆ region_eq │
+│ ---             ┆ ---    ┆ ---    ┆ ---       ┆   ┆ ---   ┆ ---     ┆ ---      ┆ ---       │
+│ str             ┆ u32    ┆ f64    ┆ f64       ┆   ┆ f64   ┆ f64     ┆ f64      ┆ f64       │
+╞═════════════════╪════════╪════════╪═══════════╪═══╪═══════╪═════════╪══════════╪═══════════╡
+│ all true pairs  ┆ 138310 ┆ 0.064  ┆ 0.135     ┆ … ┆ 0.045 ┆ 0.62    ┆ 0.594    ┆ 0.859     │
+│ false negatives ┆ 34727  ┆ 0.028  ┆ 0.492     ┆ … ┆ 0.015 ┆ 0.398   ┆ 0.198    ┆ 0.484     │
+│ false positives ┆ 4841   ┆ 0.057  ┆ 0.183     ┆ … ┆ 0.015 ┆ 0.352   ┆ 0.447    ┆ 0.817     │
+└─────────────────┴────────┴────────┴───────────┴───┴───────┴─────────┴──────────┴───────────┘
+
+FALSE NEGATIVES (missed): examples
+  [blocking miss (not a candidate); p=n/a]
+     S1 | Bangalore North Travelsprivate Private Limited | 88, 3Rd Main, Vyalikaval, Bangalore North, Bangalore, Karnataka
+     S3 | Bangalore Nórth Private Limited Services   | 88, Bangalore, KA
+  [scored below threshold; p=0.17865386865519023]
+     S1 | Eshwar Homes Private Limited               | Unit 101, Oxford Tower, 139/88, Kodihalli, Bangalore North, Bangalore, Karnataka
+     S3 | Eshwar Prívate Limited Service             | Unit 103, Oxford Tower, 139/88, Kodihalli, Bengaluru, Bangalore, KA
+  [scored below threshold; p=0.017393903372267372]
+     S1 | Bangalore India Private Limited            | 7/1 C, 2Nd Floor, 8Th Cross, Dena Bank Colony 5Th Block, Bsk 3Rd Stage, Bangalore, Karnataka
+     S2 | BANGALORE  INDIA PRIVATE LTD               | None
+  [scored below threshold; p=0.485292953960109]
+     S1 | Vijay Technology Private Limited           | No 56/30, 1St Floor, 1St Main Road Mahalakshmi Layout, Bangalore, Karnataka
+     S3 | Vijay Technology Pishrt Limited            | Door No 56/30/8, Bangalore, ಕರ್ನಾಟಕ
+  [scored below threshold; p=0.43229409581587275]
+     S1 | Caliber Entertainment (India) Private Limited | Ff-14-C, No. 55/1, Sai Nandana Apartments, Pattanagere, R R Nagar, Bangalore, Karnataka
+     S2 | Sri Caliber Entertainment Limited Private (India) | None
+  [scored below threshold; p=0.533845646426364]
+     S1 | High Estate Private Limited                | G2, G. Flr, Vaishanavi Ap, 474, 33Rd Cross 8Th Bmain, Bangalore South, Bangalore, Karnataka
+     S3 | High Estate Private                        | G02, Bangalore South, ಕರ್ನಾಟಕ
+  [scored below threshold; p=0.6059760773514612]
+     S1 | Williamsport Youth Services LLC            | 901 Williamsport Road, Williamsport, IN
+     S3 | Williamsport Youth Services                | 902 Williamsport Rd, Williamsport, Indiana
+  [scored below threshold; p=0.13252786877005399]
+     S1 | Dutch & Sons Private Limited               | Flat No 201 Sai Villa, Plot No 686A Mahalaxmi Nagar Indore, Indore, Madhya Pradesh
+     S3 | Dutch + Sons Private                       | Flat No 202 Sai Villa, Indore, MP
+  [scored below threshold; p=0.04204792114457564]
+     S1 | Vintage India (India) Private Limited      | No 175 Ii Cross Lower Palace Orchards, Bangalore, Karnataka
+     S2 | M/s Vintage India Private Limited Center   | None
+  [scored below threshold; p=0.0011806787316741751]
+     S1 | Windy Ashby Continental Catering Inc.      | 3138 4th Street, Tulsa, OK
+     S2 | Windy Ashby Catering lnc. Center           | None
+  [scored below threshold; p=0.6192456507052617]
+     S1 | Veriee W. Soria, D.O., DDS PC              | 111 Wingo Street, Bradford, TN
+     S3 | D.O., W. Soria, Veriee PC Center           | 111 Wingo St, Bradford, Tennessee
+  [blocking miss (not a candidate); p=n/a]
+     S1 | Urology Care                               | 201 Brobeck Road, Limestone, TN
+     S2 | UROLOGY-CARE                               | None
+
+FALSE POSITIVES (wrong merges): examples
+  [record matches no S1 (true distractor); p=0.9816036531347334]
+     S1 | Perident Networks Care                     | 359 Harristown Road, Bulls Gap, TN
+     S3 | Peridont Networks Cáre                     | 359 1/2 Harristown Road, Bulls Gap, Tennessee
+  [record belongs to a dropped S1 (orphan); p=0.9345152329134876]
+     S1 | Vision Valley Health LLC                   | 49 Morgan Street, Burlington, VT
+     S3 | Vision Value Health,  LLC                  | None
+  [record matches no S1 (true distractor); p=0.9210519073263881]
+     S1 | Powell Best LLC                            | 273 County Rd 298, Sweetwater, TN
+     S2 | BERTRAM BEST LLC                           | 273 COUNTY RD 298, SWEETWTER, TN
+  [record matches no S1 (true distractor); p=0.896362307285158]
+     S1 | 36 Hour Fitness Inc.                       | 515 Latimer Place, OK, Tulsa
+     S3 | 36 Hour Fitness Inc                        | Tulsa, Oklahoma, 516 Latimer Pl
+  [record matches no S1 (true distractor); p=0.830499838076033]
+     S1 | Yamuita Multitrade Pvt. Ltd.               | Sy No 186/3, Haragadde Village, Jigani Anekal Main Road, Near Apc Circle, Jigani Hobli, Anekal Taluk, Anekal, Bangalore, Karnataka
+     S2 | YAMUIORO PVT. MULTITRADE LTD.              | SY NO 186/3, HARAGADDE VILLAGE, JIGANI ANEKAL MAIN ROAD, NEAR APC CIRCLE, JIGANI HOBLI, ANEKAL TALUK, ANEKAL, Karnataka
+  [record matches no S1 (true distractor); p=0.8077989126153308]
+     S1 | Halceon Pegasus                            | 6710 Whitestown Parkway, IN, Whitestown
+     S3 | Halceonyn Pegasus                          | 6710 Whitestown Parkway, Whitstown, Indiana
+  [record belongs to a dropped S1 (orphan); p=0.8239254179399599]
+     S1 | Grow Services (India) Private Limited      | F No.- 10, Plot No -67 Kasturba Nagar, Bhopal, Madhya Pradesh
+     S3 | Glow Services (India) Private (Limited)    | None
+  [record matches no S1 (true distractor); p=0.7655490954059428]
+     S1 | Devika Consultancy Private Limited         | 29, Radio Colony, Indore, Madhya Pradesh
+     S3 | Deviki Consultancy Private (ID: 31298)     | A-29, Radio Colony, Indore, MP
+  [record matches no S1 (true distractor); p=0.7561037211163689]
+     S1 | Ujjan Kera                                 | B Block, 9Th Floor Brigade Tech Park Whitefield Road, Karnataka, Unit No B 903, Bangalore
+     S2 | -- Ujjaique Kera                           | UNIT NO B 904, 9TH FLOOR BRIGADE TECH PARK WHITEFIELD ROAD, MARATHAHALLI, Karnataka
+  [record matches no S1 (true distractor); p=0.9085884739561666]
+     S1 | Ujjaiya Irrigation                         | C/O Sunil S Shah, No. 03, 4Th Cross, Moodla Palya, Bengaluru, Bangalore, Karnataka
+     S2 | Ujjaiyayn Sérvice                          | C/O SUNIL S SHAH, NO. 03, 4TH CROSS, MOODLA PALYA, BENGALURU, Karnataka
+  [record matches no S1 (true distractor); p=0.9920023770059285]
+     S1 | Sperber, Margo F., MD                      | 11042 15th Place, Tulsa, OK
+     S3 | Sperber, Margo F., HD                      | 11042 Fifteenth Place, Tulsa, Oklahoma
+  [record matches no S1 (true distractor); p=0.9772501164354916]
+     S1 | Pranva Colonisers Corporation              | 207, Sham Tower, 164/2, R.N.T. Marg, Indore, Madhya Pradesh
+     S2 | Pranoro Cólonisers Corporation             | #G-613 207, SHAM TOWER, 164/2, R.N.T. MARG, मध्य प्रदेश

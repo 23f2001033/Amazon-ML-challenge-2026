@@ -1,0 +1,8 @@
+{
+ "thr": 0.7,
+ "thr_by_country": {
+  "France": 0.8
+ },
+ "decision": "thr",
+ "note": "v2b submission: v2a stage 1 + stage-2 (s2_v2a) re-scoring of band; thr 0.70 tuned on 2-fold CV, France +0.10"
+}

@@ -1,0 +1,41 @@
+{
+ "tag": "v4b",
+ "stage1_val": 0.9724510720826443,
+ "stage1_thr": 0.7,
+ "stage2_val": 0.9754418105792103,
+ "thr": 0.75,
+ "features": [
+  "p",
+  "is_s3",
+  "g_n_conf_other",
+  "g_n_conf_s3_other",
+  "g_n_conf_s2_other",
+  "g_sum_p_other",
+  "g_mid_max_p",
+  "g_rival_p",
+  "g_margin_vs_rival",
+  "sib_n",
+  "sib_name_max",
+  "sib_name_mean",
+  "sib_addr_max",
+  "sib_addr_mean",
+  "sib_same_house",
+  "sib_same_house_frac",
+  "pf_name_tset",
+  "pf_name_ratio",
+  "pf_addr_tset",
+  "pf_addr_partial",
+  "pf_house_eq",
+  "pf_house_both",
+  "pf_c_addr_null",
+  "pf_region_eq",
+  "pf_name_exact",
+  "logp",
+  "log1mp"
+ ],
+ "band": [
+  0.02,
+  0.99
+ ],
+ "conf": 0.75
+}

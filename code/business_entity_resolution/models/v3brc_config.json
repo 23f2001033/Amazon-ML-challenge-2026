@@ -1,0 +1,5 @@
+{
+ "thr": 0.725,
+ "decision": "thr",
+ "note": "v3brc: v3b stage 1 + rich stage 2 with cross-encoder features (Multilingual-MiniLM-L12-H384 fine-tuned), thr from val CV"
+}

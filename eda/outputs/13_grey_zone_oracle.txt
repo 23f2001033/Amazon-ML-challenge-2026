@@ -1,0 +1,7 @@
+v2a val baseline (thr 0.75): 0.9810   candidates: 13,077,371  (66.5/S1)
+perfect decisions for p in [0.3,0.9): 0.9888 (+0.0078)  pairs to re-score: 33,340 (0.17/S1, 0.3% of candidates)
+perfect decisions for p in [0.2,0.95): 0.9906 (+0.0097)  pairs to re-score: 51,079 (0.26/S1, 0.4% of candidates)
+perfect decisions for p in [0.1,0.97): 0.9921 (+0.0111)  pairs to re-score: 75,399 (0.38/S1, 0.6% of candidates)
+perfect decisions for p in [0.05,0.98): 0.9931 (+0.0121)  pairs to re-score: 105,971 (0.54/S1, 0.8% of candidates)
+perfect decisions for p in [0.02,0.99): 0.9943 (+0.0133)  pairs to re-score: 193,698 (0.98/S1, 1.5% of candidates)
+perfect decisions for p in [0.0,1.01): 0.9962 (+0.0152)  pairs to re-score: 13,077,371 (66.46/S1, 100.0% of candidates)

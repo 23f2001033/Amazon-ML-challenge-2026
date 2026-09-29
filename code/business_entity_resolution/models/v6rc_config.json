@@ -1,0 +1,5 @@
+{
+ "thr": 0.725,
+ "decision": "thr",
+ "note": "v6rc: v6 stage 1 + rich stage 2 (val+wide) with cross-encoder v1 features; thr = common best over val+wide CV"
+}

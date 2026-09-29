@@ -1,0 +1,26 @@
+## Blocking recall (fraction of true pairs retrieved) by k
+
+k=  1: name=0.1648 addr=0.2250 union=0.3539
+k=  3: name=0.3881 addr=0.5471 union=0.7229
+k=  5: name=0.4882 addr=0.7053 union=0.8512
+k= 10: name=0.5715 addr=0.8004 union=0.9161
+k= 20: name=0.6322 addr=0.8448 union=0.9434
+k= 30: name=0.6617 addr=0.8609 union=0.9527
+k= 50: name=0.6952 addr=0.8757 union=0.9617
+
+per country union recall@k (k=10,50):
+  India k=10: name=0.4989 addr=0.7680 union=0.8834
+  India k=50: name=0.6121 addr=0.8334 union=0.9379
+  US k=10: name=0.6202 addr=0.8221 union=0.9379
+  US k=50: name=0.7509 addr=0.9041 union=0.9776
+
+Top-1 name score: singletons vs entities with matches
+shape: (2, 6)
+┌───────────┬──────────┬──────────┬─────────┬─────┬─────┐
+│ singleton ┆ q10      ┆ q25      ┆ q50     ┆ q75 ┆ q90 │
+│ ---       ┆ ---      ┆ ---      ┆ ---     ┆ --- ┆ --- │
+│ bool      ┆ f64      ┆ f64      ┆ f64     ┆ f64 ┆ f64 │
+╞═══════════╪══════════╪══════════╪═════════╪═════╪═════╡
+│ false     ┆ 0.98326  ┆ 1.0      ┆ 1.0     ┆ 1.0 ┆ 1.0 │
+│ true      ┆ 0.834697 ┆ 0.898381 ┆ 0.97439 ┆ 1.0 ┆ 1.0 │
+└───────────┴──────────┴──────────┴─────────┴─────┴─────┘

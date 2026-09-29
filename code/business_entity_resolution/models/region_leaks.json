@@ -1,0 +1,220 @@
+{
+ "rule": {
+  "MIN_RATE": 0.02,
+  "MIN_N": 30,
+  "BIG_RATE": 0.005,
+  "BIG_N": 500
+ },
+ "leaks": [
+  [
+   "India",
+   "telangana",
+   "andhra pradesh"
+  ],
+  [
+   "US",
+   "wa",
+   "dc"
+  ],
+  [
+   "US",
+   "dc",
+   "wa"
+  ],
+  [
+   "India",
+   "haryana",
+   "delhi"
+  ],
+  [
+   "India",
+   "andhra pradesh",
+   "telangana"
+  ],
+  [
+   "India",
+   "andaman and nicobar islands",
+   "maharashtra"
+  ],
+  [
+   "India",
+   "arunachal pradesh",
+   "maharashtra"
+  ],
+  [
+   "US",
+   "fl",
+   "ny"
+  ],
+  [
+   "US",
+   "nv",
+   "tx"
+  ],
+  [
+   "India",
+   "arunachal pradesh",
+   "karnataka"
+  ],
+  [
+   "India",
+   "arunachal pradesh",
+   "delhi"
+  ],
+  [
+   "US",
+   "nv",
+   "ia"
+  ],
+  [
+   "India",
+   "arunachal pradesh",
+   "telangana"
+  ],
+  [
+   "India",
+   "chandigarh",
+   "punjab"
+  ],
+  [
+   "India",
+   "chandigarh",
+   "maharashtra"
+  ],
+  [
+   "India",
+   "arunachal pradesh",
+   "gujarat"
+  ]
+ ],
+ "evidence": [
+  [
+   "India",
+   "telangana",
+   "andhra pradesh",
+   35499,
+   192073,
+   0.18482035476095027
+  ],
+  [
+   "US",
+   "wa",
+   "dc",
+   4374,
+   169634,
+   0.025784925191883704
+  ],
+  [
+   "US",
+   "dc",
+   "wa",
+   1837,
+   2374,
+   0.7737994945240101
+  ],
+  [
+   "India",
+   "haryana",
+   "delhi",
+   620,
+   123572,
+   0.005017317838992652
+  ],
+  [
+   "India",
+   "andhra pradesh",
+   "telangana",
+   594,
+   61879,
+   0.009599379434056789
+  ],
+  [
+   "India",
+   "andaman and nicobar islands",
+   "maharashtra",
+   183,
+   699,
+   0.26180257510729615
+  ],
+  [
+   "India",
+   "arunachal pradesh",
+   "maharashtra",
+   77,
+   1303,
+   0.059094397544128936
+  ],
+  [
+   "US",
+   "fl",
+   "ny",
+   75,
+   2551,
+   0.029400235201881616
+  ],
+  [
+   "US",
+   "nv",
+   "tx",
+   69,
+   538,
+   0.12825278810408922
+  ],
+  [
+   "India",
+   "arunachal pradesh",
+   "karnataka",
+   64,
+   1303,
+   0.04911742133537989
+  ],
+  [
+   "India",
+   "arunachal pradesh",
+   "delhi",
+   60,
+   1303,
+   0.04604758250191865
+  ],
+  [
+   "US",
+   "nv",
+   "ia",
+   56,
+   538,
+   0.10408921933085502
+  ],
+  [
+   "India",
+   "arunachal pradesh",
+   "telangana",
+   47,
+   1303,
+   0.03607060629316961
+  ],
+  [
+   "India",
+   "chandigarh",
+   "punjab",
+   43,
+   385,
+   0.11168831168831168
+  ],
+  [
+   "India",
+   "chandigarh",
+   "maharashtra",
+   37,
+   385,
+   0.09610389610389611
+  ],
+  [
+   "India",
+   "arunachal pradesh",
+   "gujarat",
+   32,
+   1303,
+   0.024558710667689946
+  ]
+ ]
+}

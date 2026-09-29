@@ -1,0 +1,10 @@
+{
+ "thr": 0.725,
+ "thr_by_country": {
+  "US": 0.6,
+  "India": 0.5,
+  "France": 0.725
+ },
+ "decision": "thr",
+ "note": "v6fr3t: v6fr3 stack with per-country thresholds tuned at test-like orphan density (docs/04_EXPERIMENTS.md)"
+}

@@ -1,0 +1,107 @@
+positive pairs: 68943 missed@50: 2642 recall=0.9617
+
+miss rate by condition:
+  name_nonascii    share_of_pos=0.139  miss_rate=0.095  share_of_misses=0.345
+  addr_null        share_of_pos=0.044  miss_rate=0.219  share_of_misses=0.249
+  core_exact       share_of_pos=0.515  miss_rate=0.007  share_of_misses=0.090
+  core_ratio<60    share_of_pos=0.115  miss_rate=0.113  share_of_misses=0.341
+  first_num_eq     share_of_pos=0.770  miss_rate=0.024  share_of_misses=0.480
+  addr_tset<70     share_of_pos=0.027  miss_rate=0.265  share_of_misses=0.190
+  India S2: recall=0.9506
+  India S3: recall=0.9261
+  US S2: recall=0.9788
+  US S3: recall=0.9765
+
+best-rank distribution of found positives: shape: (9, 2)
+┌────────────┬──────────┐
+│ statistic  ┆ value    │
+│ ---        ┆ ---      │
+│ str        ┆ f64      │
+╞════════════╪══════════╡
+│ count      ┆ 66301.0  │
+│ null_count ┆ 0.0      │
+│ mean       ┆ 2.36464  │
+│ std        ┆ 4.890685 │
+│ min        ┆ 0.0      │
+│ 25%        ┆ 0.0      │
+│ 50%        ┆ 1.0      │
+│ 75%        ┆ 2.0      │
+│ max        ┆ 49.0     │
+└────────────┴──────────┘
+
+examples of missed positives:
+[India] S1 | Lakshmi Marketing Private Limited             | G-15/6, Surya Co Op Soc Shillotar, Raichur Sukapur, Panvel, Raigarh(Mh), Maharashtra
+     S3 | Private Lakshmi Marcekeorigg (Limited)        | H.no 922 G-15/6, Raigarh(mh), MH
+
+[US] S1 | Parker Roofing-Princeton                      | 2706 Delevan Drive, Princeton, TX
+     S2 | Parker Sérvices                               | None
+
+[India] S1 | Alpha Systems LLP                             | B-163, Sector-, Dheeraj Nagar, Atmadpur, Faridabad, Haryana
+     S2 | अल्फा सिस्टम्स एलएलपी                         | NO 983 B-163, FARIDABAD, Haryana
+
+[India] S1 | Balaji Recycling Limited                      | 139 Pritam Soc.No. 2, Bharuch, Gujarat, Bharuch
+     S2 | BALAJI REHCYLING LIMITED                      | 39 PRITAM SOC.NO. 2, BHARUH, Gujarat
+
+[US] S1 | Urban Cleaning Service                        | 4088 Radio Drive, Woodbury, MN
+     S2 | URBAN  CLEANING                               | 4088 RADIO DRIVE, SAINT PAUL TOWNHSIP, MN
+
+[India] S1 | Ray Biotechnologies LLP                       | Plot No. 74, Kh No. 851, X Block, Shyam Vihar, Ph - 1, Najafgarh Murgi, Form Pp No - Cx, - 22, New Delhi, South West Delhi, Delhi
+     S3 | raybiotechno1ogies.com                        | Plot No. 74, South West Delhi, DL
+
+[US] S1 | Health Network                                | 29 Crestview Drive, Woodbridge, CT
+     S3 | health health network                         | 29 Crestview Drive, NEW Haven CDP, Connecticut
+
+[India] S1 | Unique Global Limited                         | Madhya Pradesh, Vinay Building G.S.T.V. Road, 39, Indore
+     S3 | Sri Unique Glóbal Limited                     | #974 39, Indore, New Palasia, MP
+
+[US] S1 | Whitmore and Perez LLC                        | 2423 15th Place, Washington, DC
+     S3 | Veolyra                                       | 2423 15th Pl, District of Columbia, Washington
+
+[India] S1 | Arihant Software Private Limited              | Office No-412, 4Th Floor, Manglam Paradise, Plot No.-8, Sector-3, Manglam Place, Delhi, North West Delhi, Delhi
+     S3 | अरिहंत सॉफ्टवेयर प्राइवेट लिमिटेड             | Office No-412, Delhi, North West Delhi, DL
+
+[India] S1 | Southern Power Private Limited                | #20, 1St Main, Bangalore North, Bangalore, Karnataka
+     S3 | ಸದರ್ನ್ ಪವರ್ ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್                 | Bangalore North, Door No 20, Bangalore, KA
+
+[US] S1 | Classic Technical Company                     | 986 Sugar Camp Road, Mineral Wells, WV
+     S3 | Classic Company Service                       | None
+
+[India] S1 | Gold Real Technology Private Limited          | Room No.309, Sujata Shopping Centre, Navghar Road, Opp. Aradhana Bldg, Sector 3, Bhayander, (E), Thane, Maharashtra
+     S2 | गोल्ड रियल टेक्नोलॉजी प्राइवेट लिमिटेड        | PLOT 184 ROOM NO.309, THANE, Maharashtra
+
+[US] S1 | Red Auto Body                                 | 41 Seneca Avenue, Oneida Castle, NY
+     S3 | Red Auto Body Center                          | Seneca Avenue, Oneda, New York
+
+[US] S1 | Schultz Quantumsphere, Corp                   | 428 Whitehall Road, Chattanooga, TN
+     S2 | Schultz Quganthumsphere, Corp                 | None
+
+[India] S1 | Shyam Projects Private Limited                | 1293/A, Ponnathara Vaduthala Boat Jetty Road, Cochin, Ernakulam, Kerala
+     S3 | ശ്യാം പ്രോജക്ട്സ് പ്രൈവറ്റ് ലിമിറ്റഡ്         | 1293/A, Kochi, Ernakulam, KL
+
+[India] S1 | First Energy Private Limited                  | A/15, Takshshila Park, Opp. Galaxy Cinema, Opp. Baroda Mineral, Naroda, Ahmedabad, Gujarat
+     S3 | Shri First Energy                             | A/#15, Naroda, Ahmedabad, GJ
+
+[US] S1 | Citadel                                       | 10 Bert Road, Cheektowaga, NY
+     S2 | Citadel                                       | 10 BRET RD, BUFFALO, NY
+
+[India] S1 | Ss Impex Private Limited                      | Kh. No. 14/10, Ground Floor, Right, Samalka, Near Heera Public School, South West Delhi, Delhi
+     S3 | एसएस इम्पेक्स प्राइवेट लिमिटेड                | Kh. No. 14/10, South West Delhi, दिल्ली
+
+[India] S1 | Vital Securities Private Limited              | House No 48, Ambijalgaon Tal- Karjat, Ahmednagar, Maharashtra
+     S3 | M/s Vital Private Limited Services            | None
+
+[US] S1 | UP Trusted Sunrise Inc                        | 1435 Park Avenue, Park City (summit Co), UT
+     S2 | UP TRUSTED                                    | None
+
+[US] S1 | Behavioral Health Care Associates             | 108 1st Street, Bridgewater, IA
+     S2 | behavioralhealthcare.com                      | 108 1ST STREET, WASHINGTON, IA
+
+[India] S1 | Classic Ventures Pvt Ltd                      | West Bengal, 127, South 24 Parganas, Briji West, Garia, Kolkata
+     S3 | Smt Classic Ventures  Pvt Ltd                 | 127, South Twenty Four Parganas, South 24 Parganas, WB
+
+[US] S1 | Veterans Center                               | 210 Myrtle Avenue, TN, Johnson City
+     S2 | Veterans Center Federation                    | None
+
+[US] S1 | Guertin Bright Laboratories LLC               | 1883 4 Street, Brooklyn, NY
+     S3 | #guertinbright                                | 4 Street, Brooklyn, New York
+

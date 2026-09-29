@@ -1,0 +1,6 @@
+{
+ "thr": 0.5,
+ "thr_by_country": {},
+ "decision": "thr",
+ "note": "v2c: v2b scores (stage-1 v2a + stage-2) re-cut at 0.50 for all countries; calibrated so per-country test match rates return to v1 levels (v2a count-feature shift lowered test probabilities)"
+}

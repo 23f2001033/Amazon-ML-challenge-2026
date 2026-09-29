@@ -1,0 +1,20 @@
+{
+ "s2name": "s2_blend_v6v6t_frv6t",
+ "thr": 0.725,
+ "thr_by_country": {
+  "US": 0.65,
+  "India": 0.675,
+  "France": 0.6
+ },
+ "swap_veto": [
+  "France"
+ ],
+ "add_drop_noise": [
+  "France"
+ ],
+ "empty_rescue": 0.35,
+ "note": "v6fr3z candidate B: US/India as vb1; France = stage-2 w on stage-1 v6t only; v6fr3y rules",
+ "swap_veto_final": [
+  "France"
+ ]
+}

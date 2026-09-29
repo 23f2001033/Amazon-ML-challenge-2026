@@ -1,0 +1,39 @@
+# Allow-list: only the project sources, docs and small artefacts are tracked.
+# Competition data (dataset, problem statement, guidelines) and large intermediates stay local.
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/Documentation_template.md
+!/check_submission.py
+!/make_package.py
+!/pack.sh
+!/code/
+!/docs/
+!/eda/
+!/share_team/
+!/share_ved/
+!/submissions/
+
+# data and bulky artefacts anywhere inside the tracked folders
+*.parquet
+*.tsv
+*.csv
+*.zip
+*.log
+*.pyc
+__pycache__/
+
+# raw test-record excerpts
+eda/outputs/10b_france_eyeball.txt
+
+# models: only the binaries of the final submission (configs are tracked)
+code/business_entity_resolution/models/*.txt
+!code/business_entity_resolution/models/lgbm_v6.txt
+!code/business_entity_resolution/models/lgbm_v6t.txt
+!code/business_entity_resolution/models/s2_v6_rich_ce_ce2_ce3fr_ce4fr_w.txt
+!code/business_entity_resolution/models/s2_v6_rich_ce_ce2_ce3fr_ce4fr_w2.txt
+!code/business_entity_resolution/models/s2_v6t_rich_ce_ce2_ce3fr_ce4fr_w2.txt
+
+# per-version model copies from early submissions (superseded; final models live in code/.../models)
+submissions/*_lgbm.txt

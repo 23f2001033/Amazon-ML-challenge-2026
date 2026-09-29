@@ -1,0 +1,5 @@
+{
+ "thr": 0.675,
+ "decision": "thr",
+ "note": "v3br: v3b stage 1 + rich stage 2 (5 v2a count feats dropped), thr tuned on val 2-fold CV"
+}

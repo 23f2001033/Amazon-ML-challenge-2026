@@ -1,0 +1,5 @@
+{
+ "thr": 0.675,
+ "decision": "thr",
+ "note": "v6: combined+leak blocking, big train universe, test-consistent features + rich stage 2; thr from val CV"
+}

@@ -1,0 +1,5 @@
+{
+ "thr": 0.75,
+ "decision": "thr",
+ "note": "v4b transfer-safe stage 1 + margin-only stage 2 (base), thr from val CV"
+}

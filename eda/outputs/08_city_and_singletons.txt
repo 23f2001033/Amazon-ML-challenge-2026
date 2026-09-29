@@ -1,0 +1,45 @@
+(a) US positive pairs with city parsed on both sides: 39150; exact city eq=0.789; fuzzy(>=80, prefix-stripped)=0.882
+    examples of city disagreement: [('turner', 'auburn'), ('turner', 'auburn'), ('hendersonville', 'hendresonville city'), ('pittsylvania county', 'chatham'), ('romeoville', 'incorporated'), ('romeoville', 'incorporated'), ('chandler', 'honeysuckle ln'), ('chandler', 'ocotillo'), ('chandler', 'ocotillo'), ('bellwood borough', 'bellwood'), ('bellwood borough', 'bellwood'), ('bellwood borough', 'bellwood'), ('bellwood borough', 'bellwood'), ('bellwood borough', 'bellwood'), ('mint hill', 'thamesmead ln')]
+
+(b) best hard-negative per S1 (by name token-set) — singleton vs non-singleton S1:
+shape: (2, 7)
+┌───────────┬───────┬────────────┬───────────────┬───────────┬──────────────┬──────────┐
+│ singleton ┆ len   ┆ core_exact ┆ name_tset>=95 ┆ addr_tset ┆ first_num_eq ┆ num_jacc │
+│ ---       ┆ ---   ┆ ---        ┆ ---           ┆ ---       ┆ ---          ┆ ---      │
+│ bool      ┆ u32   ┆ f64        ┆ f64           ┆ f64       ┆ f64          ┆ f64      │
+╞═══════════╪═══════╪════════════╪═══════════════╪═══════════╪══════════════╪══════════╡
+│ false     ┆ 18911 ┆ 0.445      ┆ 0.924         ┆ 45.2      ┆ 0.048        ┆ 0.03     │
+│ true      ┆ 1089  ┆ 0.405      ┆ 0.944         ┆ 47.0      ┆ 0.051        ┆ 0.035    │
+└───────────┴───────┴────────────┴───────────────┴───────────┴──────────────┴──────────┘
+
+negatives with identical core name AND same house number: 2181 (0.0073 of hard negs); on singletons: 141
+   S1 | Indo Marketing Private Limited           | 3, Delhi, New Delhi, G/F Shop, Main Road, Angad Nagar, Laxmi Nagar
+   S3 | Indo Marketing Private-Limited           | 3/25, Thatchan Kadu, R.goundampalayam Rasipuram, Rasipuram, TN
+
+   S1 | Jay Management                           | Mumbai City, Garodia Nagar, Ghatkopar East, 10/110 Abhilasha, Maharashtra, Mumbai
+   S3 | JAY Management                           | Hodse No. 0010, New Delhi, DL
+
+   S1 | Prime Management Limited                 | Apt No 201, 2Nd Floor, Amruta Apartments, No 5, Bangalore North, Bangalore, Karnataka
+   S2 | Prime Management Limited Limited         | A-2/19 SEC-15 GIDA, GORAKHPUR, Uttar Pradesh
+
+   S1 | Modern Tech Private Limited              | Shop No.1, Main Maruti Kunj Road, Near Aravalli Hospital, Opposite Shyam Kunj, Gali No. 5, Gurgaon, Haryana
+   S3 | Modern Tech Pvt Limited                  | C/o Naveen Suneja, Old No. 21/1, 21/3, 21/2 21/4, New No.rz-21 Upper .New Uttam Nagar, Delhi, New Delhi, DL
+
+   S1 | Reraum Clinic                            | 1906 Driftwood Street, Fl 0, Wichita, KS
+   S3 | Reraum Clinic Co                         | 192 Driftwood Street, Fl 0, Wichita, Kansas
+
+   S1 | Pegasus Sangh                            | North 24 Parganas, Khushi App., West Bengal, Gf-8, F/No-D/5, Rabindrapally, D B Nagr
+   S3 | Dr PEGASUS SANGH LLP                     | No 6/9 Khushi App., Gf-8, F/no-d/5, Rabindrapally, D B Nagr, North 24 Parganas, WB
+
+   S1 | Hyderabad (India) Infra Private Limited  | 8-A G/F, Sector-1, Sfs Flat, Gazipur, East Delhi, Delhi, East Delhi, Delhi
+   S3 | Hyderabad (India) Infra [(Limited)]      | 9-A G/f, Sector-1, Sfs Flat, Gazipur, East Delhi, Delhi, East Delhi, DL
+
+   S1 | Shree Management Limited                 | Karnataka, 1St Floor, 1St Main, 1St Block, Dr.Rajkumar Road, #139/4, Bangalore, Rajajinagar
+   S3 | SHREE MANAGEMENT LTD                     | No. 8, K. No. 115/1, 6Th E Main, Gaurav Nagar, 7Th Phase, Bangalore South, Bangalore, KA
+
+   S1 | Ember Inc.                               | MO, 970 French Drive, Fenton, Unit APT 2206
+   S3 | Ember Inc                                | 91 French Drive, # APT 2206, Fenton, Missouri
+
+   S1 | Galaxy Foundation Private Limited        | 1/4, Kirubakaran Street, Old Military Line, Palayamkottai, Tirunelveli, Tamil Nadu
+   S3 | Galaxy Foundation Limited Private        | ##4/1B, Kolkata, Howrah, WB
+

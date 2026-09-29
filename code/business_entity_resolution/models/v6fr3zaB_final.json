@@ -1,0 +1,39 @@
+{
+ "s2name": "s2_blend_v6v6t_frv6",
+ "thr": 0.725,
+ "thr_by_country": {
+  "US": 0.65,
+  "India": 0.675,
+  "France": 0.6
+ },
+ "swap_veto": [
+  "France"
+ ],
+ "add_drop_noise": [
+  "France"
+ ],
+ "empty_rescue": 0.35,
+ "note": "v6fr3za: v6fr3z + France acronym rescue (record = initials of the S1 name at exact/close address; US/India labelled 100% true) + US/India thresholds per S1 candidate-count bucket (bucket_thr.py cross-fit +0.00005, 4/4 cells positive)",
+ "swap_veto_final": [
+  "France"
+ ],
+ "add_acronym": [
+  "France"
+ ],
+ "thr_by_bucket": {
+  "US": {
+   "1": 0.5,
+   "2-3": 0.7,
+   "4-6": 0.725,
+   "7-10": 0.675,
+   "11+": 0.65
+  },
+  "India": {
+   "1": 0.5,
+   "2-3": 0.65,
+   "4-6": 0.7,
+   "7-10": 0.7,
+   "11+": 0.675
+  }
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "s2name": "s2_blend_v6v6t_frv6",
+ "thr": 0.725,
+ "thr_by_country": {
+  "US": 0.65,
+  "India": 0.675,
+  "France": 0.5
+ },
+ "swap_veto": [
+  "France"
+ ],
+ "add_drop_noise": [
+  "France"
+ ],
+ "empty_rescue": 0.35,
+ "note": "v6fr3zF2: v6fr3zbB + France threshold 0.50 + acronym rescue in all countries",
+ "swap_veto_final": [
+  "France"
+ ],
+ "add_acronym": [
+  "France",
+  "US",
+  "India"
+ ],
+ "thr_by_bucket": {
+  "US": {
+   "1": 0.5,
+   "2-3": 0.7,
+   "4-6": 0.725,
+   "7-10": 0.675,
+   "11+": 0.65
+  },
+  "India": {
+   "1": 0.5,
+   "2-3": 0.65,
+   "4-6": 0.7,
+   "7-10": 0.7,
+   "11+": 0.675
+  }
+ }
+}

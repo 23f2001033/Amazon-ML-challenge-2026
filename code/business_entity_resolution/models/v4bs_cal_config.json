@@ -1,0 +1,10 @@
+{
+ "thr": 0.75,
+ "thr_by_country": {
+  "France": 0.7446,
+  "India": 0.5101,
+  "US": 0.4711
+ },
+ "decision": "thr",
+ "note": "v4bs_cal: v4b transfer-safe stage 1 + margin-only stage 2, per-country thresholds matching v2c test match rates"
+}

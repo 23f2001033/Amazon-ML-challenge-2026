@@ -1,0 +1,20 @@
+{
+ "s2name": "s2_v6_rich_ce_ce2_ce3fr_ce4fr_w2us_wfr",
+ "thr": 0.725,
+ "thr_by_country": {
+  "US": 0.7,
+  "India": 0.7,
+  "France": 0.6
+ },
+ "swap_veto": [
+  "France"
+ ],
+ "add_drop_noise": [
+  "France"
+ ],
+ "empty_rescue": 0.35,
+ "note": "v6fr3y: v6fr3x + the France category-swap veto re-applied to the final decisions (1,033 residual swaps accepted at p 0.60-0.725 or promoted after the base veto)",
+ "swap_veto_final": [
+  "France"
+ ]
+}

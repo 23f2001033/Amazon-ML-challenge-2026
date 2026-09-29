@@ -1,0 +1,3 @@
+# keep model files byte-identical to the ones that produced the submission
+code/business_entity_resolution/models/*.txt -text
+code/business_entity_resolution/models/*.json -text

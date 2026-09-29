@@ -1,0 +1,3 @@
+{"s2name": "s2_v6_rich_ce_ce2_ce3fr_ce4fr_w2us_wfr", "thr": 0.725, "thr_by_country": {"US": 0.7, "India": 0.7, "France": 0.725},
+ "swap_veto": ["France"], "add_drop_noise": ["France"], "empty_rescue": 0.35,
+ "note": "v6fr3w2: US/India from stage 2 w2 (orphan-like records down-weighted to test density AND records owned outside the held-out universe weighted 0.05; test-like (B) val 0.99097 vs 0.99062 for w), thresholds 0.70; France unchanged from v6fr3w (stage 2 w, 0.725, swap veto, drop+noise, rescue)"}

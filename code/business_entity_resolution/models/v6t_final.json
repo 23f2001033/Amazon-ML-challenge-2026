@@ -1,0 +1,20 @@
+{
+ "s2name": "s2_v6t_rich_ce_ce2_ce3fr_ce4fr_w2us_wfr",
+ "thr": 0.725,
+ "thr_by_country": {
+  "US": 0.7,
+  "India": 0.7,
+  "France": 0.6
+ },
+ "swap_veto": [
+  "France"
+ ],
+ "add_drop_noise": [
+  "France"
+ ],
+ "empty_rescue": 0.35,
+ "note": "v6t: stage 1 retrained with test-faithful weights (ER_S1_TESTW=1) + all four CEs on its new band pairs; stage 2 w2 (US/India) / w (France) on it; decision rules as v6fr3y. Thresholds set from the v6t dev run.",
+ "swap_veto_final": [
+  "France"
+ ]
+}

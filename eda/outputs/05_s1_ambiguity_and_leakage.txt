@@ -1,0 +1,244 @@
+C:\Users\Aman\Desktop\Amazon-ML\eda\05_s1_ambiguity_and_leakage.py:30: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  alpha = sc.select(pl.col("parts").explode()).filter(~pl.col("parts").str.contains(r"\d"))
+
+######## train S1
+business_name: S1 rows sharing their (country,business_name) with >=1 other S1: 844,718 / 2,206,821 (0.383); max group=253
+nn: S1 rows sharing their (country,nn) with >=1 other S1: 883,697 / 2,206,821 (0.400); max group=253
+cn: S1 rows sharing their (country,cn) with >=1 other S1: 1,093,476 / 2,206,821 (0.495); max group=567
+most common core names:
+shape: (15, 3)
+┌─────────┬───────────────────────┬─────┐
+│ country ┆ cn                    ┆ len │
+│ ---     ┆ ---                   ┆ --- │
+│ str     ┆ str                   ┆ u32 │
+╞═════════╪═══════════════════════╪═════╡
+│ US      ┆ meridian              ┆ 567 │
+│ US      ┆ cedar                 ┆ 351 │
+│ US      ┆ helios                ┆ 333 │
+│ US      ┆ family center         ┆ 333 │
+│ US      ┆ summit                ┆ 332 │
+│ US      ┆ cascade               ┆ 331 │
+│ US      ┆ granite               ┆ 318 │
+│ US      ┆ lynx                  ┆ 313 │
+│ US      ┆ sterling              ┆ 313 │
+│ US      ┆ ember                 ┆ 310 │
+│ US      ┆ amber                 ┆ 310 │
+│ US      ┆ pinnacle              ┆ 309 │
+│ US      ┆ sapphire              ┆ 309 │
+│ US      ┆ ear nose throat group ┆ 308 │
+│ US      ┆ slate                 ┆ 307 │
+└─────────┴───────────────────────┴─────┘
+
+[India] address parts count dist: [{'np': 2, 'count': 459}, {'np': 3, 'count': 61645}, {'np': 4, 'count': 169834}, {'np': 5, 'count': 209760}, {'np': 6, 'count': 192415}, {'np': 7, 'count': 133550}, {'np': 8, 'count': 68797}, {'np': 9, 'count': 29793}, {'np': 10, 'count': 11734}, {'np': 11, 'count': 3865}]
+[India] distinct non-numeric address parts: 686,443; top:
+shape: (25, 2)
+┌────────────────┬────────┐
+│ parts          ┆ len    │
+│ ---            ┆ ---    │
+│ str            ┆ u32    │
+╞════════════════╪════════╡
+│ Maharashtra    ┆ 191971 │
+│ Delhi          ┆ 155269 │
+│ Mumbai         ┆ 81293  │
+│ New Delhi      ┆ 76725  │
+│ Uttar Pradesh  ┆ 75174  │
+│ Karnataka      ┆ 70306  │
+│ Tamil Nadu     ┆ 63482  │
+│ Bangalore      ┆ 60749  │
+│ Gujarat        ┆ 57653  │
+│ West Bengal    ┆ 57007  │
+│ Telangana      ┆ 56189  │
+│ Kolkata        ┆ 54271  │
+│ Hyderabad      ┆ 47645  │
+│ Pune           ┆ 44892  │
+│ Mumbai City    ┆ 37843  │
+│ Haryana        ┆ 36714  │
+│ Kerala         ┆ 35661  │
+│ Chennai        ┆ 32535  │
+│ Rajasthan      ┆ 32358  │
+│ Howrah         ┆ 29632  │
+│ Thane          ┆ 27876  │
+│ Ahmedabad      ┆ 25987  │
+│ South Delhi    ┆ 24198  │
+│ Bihar          ┆ 23077  │
+│ Madhya Pradesh ┆ 22574  │
+└────────────────┴────────┘
+[India] dup (core name, first address part): 3549
+
+[US] address parts count dist: [{'np': 2, 'count': 2}, {'np': 3, 'count': 1114984}, {'np': 4, 'count': 208647}]
+[US] distinct non-numeric address parts: 15,231; top:
+shape: (25, 2)
+┌───────┬────────┐
+│ parts ┆ len    │
+│ ---   ┆ ---    │
+│ str   ┆ u32    │
+╞═══════╪════════╡
+│ TX    ┆ 133202 │
+│ NY    ┆ 102340 │
+│ NC    ┆ 94673  │
+│ OH    ┆ 85246  │
+│ IL    ┆ 75660  │
+│ TN    ┆ 59647  │
+│ VA    ┆ 59579  │
+│ MA    ┆ 56804  │
+│ AZ    ┆ 56535  │
+│ IN    ┆ 49413  │
+│ WA    ┆ 42179  │
+│ MD    ┆ 40657  │
+│ CA    ┆ 37396  │
+│ AL    ┆ 32583  │
+│ WI    ┆ 31434  │
+│ MN    ┆ 31135  │
+│ OR    ┆ 29826  │
+│ KY    ┆ 29475  │
+│ AR    ┆ 27099  │
+│ MO    ┆ 25953  │
+│ UT    ┆ 23122  │
+│ OK    ┆ 22719  │
+│ IA    ┆ 22479  │
+│ CT    ┆ 18427  │
+│ WV    ┆ 15907  │
+└───────┴────────┘
+[US] dup (core name, first address part): 2274
+
+######## test S1
+business_name: S1 rows sharing their (country,business_name) with >=1 other S1: 623,220 / 1,732,544 (0.360); max group=205
+nn: S1 rows sharing their (country,nn) with >=1 other S1: 650,471 / 1,732,544 (0.375); max group=205
+cn: S1 rows sharing their (country,cn) with >=1 other S1: 813,223 / 1,732,544 (0.469); max group=530
+most common core names:
+shape: (15, 3)
+┌─────────┬──────────────────┬─────┐
+│ country ┆ cn               ┆ len │
+│ ---     ┆ ---              ┆ --- │
+│ str     ┆ str              ┆ u32 │
+╞═════════╪══════════════════╪═════╡
+│ France  ┆ bordeaux club    ┆ 530 │
+│ France  ┆ nantes club      ┆ 486 │
+│ France  ┆ lille club       ┆ 423 │
+│ France  ┆ bordeaux amicale ┆ 342 │
+│ France  ┆ bordeaux ecole   ┆ 318 │
+│ France  ┆ lille ecole      ┆ 294 │
+│ France  ┆ nantes ecole     ┆ 276 │
+│ US      ┆ meridian         ┆ 270 │
+│ France  ┆ bordeaux comite  ┆ 267 │
+│ France  ┆ nantes amicale   ┆ 256 │
+│ France  ┆ nantes comite    ┆ 254 │
+│ France  ┆ lille amicale    ┆ 240 │
+│ France  ┆ lille comite     ┆ 239 │
+│ France  ┆ roubaix club     ┆ 218 │
+│ France  ┆ dunkerque club   ┆ 218 │
+└─────────┴──────────────────┴─────┘
+
+[US] address parts count dist: [{'np': 2, 'count': 1}, {'np': 3, 'count': 558625}, {'np': 4, 'count': 104480}]
+[US] distinct non-numeric address parts: 13,824; top:
+shape: (25, 2)
+┌───────┬───────┐
+│ parts ┆ len   │
+│ ---   ┆ ---   │
+│ str   ┆ u32   │
+╞═══════╪═══════╡
+│ TX    ┆ 66508 │
+│ NY    ┆ 50775 │
+│ NC    ┆ 47752 │
+│ OH    ┆ 42332 │
+│ IL    ┆ 37858 │
+│ TN    ┆ 30144 │
+│ VA    ┆ 29820 │
+│ AZ    ┆ 28846 │
+│ MA    ┆ 28263 │
+│ IN    ┆ 24784 │
+│ WA    ┆ 21370 │
+│ MD    ┆ 20136 │
+│ CA    ┆ 18943 │
+│ AL    ┆ 16456 │
+│ WI    ┆ 15823 │
+│ MN    ┆ 15691 │
+│ OR    ┆ 15035 │
+│ KY    ┆ 14703 │
+│ AR    ┆ 13724 │
+│ MO    ┆ 12789 │
+│ UT    ┆ 11506 │
+│ OK    ┆ 11361 │
+│ IA    ┆ 11168 │
+│ CT    ┆ 9387  │
+│ WV    ┆ 7989  │
+└───────┴───────┘
+[US] dup (core name, first address part): 600
+
+[France] address parts count dist: [{'np': 2, 'count': 68}, {'np': 3, 'count': 249389}, {'np': 4, 'count': 9754}, {'np': 5, 'count': 189}, {'np': 6, 'count': 52}]
+[France] distinct non-numeric address parts: 3,993; top:
+shape: (25, 2)
+┌──────────────────────────────┬────────┐
+│ parts                        ┆ len    │
+│ ---                          ┆ ---    │
+│ str                          ┆ u32    │
+╞══════════════════════════════╪════════╡
+│ Hauts-de-France              ┆ 101521 │
+│ Nouvelle-Aquitaine           ┆ 85197  │
+│ Pays de la Loire             ┆ 72734  │
+│ Bordeaux                     ┆ 42931  │
+│ Nantes                       ┆ 37331  │
+│ Lille                        ┆ 34176  │
+│ Tourcoing                    ┆ 18153  │
+│ Dunkerque                    ┆ 17067  │
+│ Roubaix                      ┆ 16300  │
+│ Calais                       ┆ 15826  │
+│ Saint-Nazaire                ┆ 13679  │
+│ Pessac                       ┆ 12611  │
+│ La Teste-de-Buch             ┆ 11294  │
+│ Mérignac                     ┆ 10287  │
+│ Lège-Cap-Ferret              ┆ 8072   │
+│ Pornic                       ┆ 7831   │
+│ La Baule-Escoublac           ┆ 6957   │
+│ Saint-Herblain               ┆ 6935   │
+│ Maison des Associations      ┆ 239    │
+│ La Teste de Buch             ┆ 76     │
+│ Maison de la Vie Associative ┆ 68     │
+│ Maison des associations      ┆ 55     │
+│ Le Clion                     ┆ 48     │
+│ RPT de lEurope               ┆ 47     │
+│ Lomme                        ┆ 45     │
+└──────────────────────────────┴────────┘
+[France] dup (core name, first address part): 3548
+
+[India] address parts count dist: [{'np': 2, 'count': 384}, {'np': 3, 'count': 56406}, {'np': 4, 'count': 155472}, {'np': 5, 'count': 191452}, {'np': 6, 'count': 176620}, {'np': 7, 'count': 123427}, {'np': 8, 'count': 63194}, {'np': 9, 'count': 27534}, {'np': 10, 'count': 10821}, {'np': 11, 'count': 3457}]
+[India] distinct non-numeric address parts: 640,644; top:
+shape: (25, 2)
+┌────────────────┬────────┐
+│ parts          ┆ len    │
+│ ---            ┆ ---    │
+│ str            ┆ u32    │
+╞════════════════╪════════╡
+│ Maharashtra    ┆ 175984 │
+│ Delhi          ┆ 141718 │
+│ Mumbai         ┆ 74698  │
+│ New Delhi      ┆ 69818  │
+│ Uttar Pradesh  ┆ 68749  │
+│ Karnataka      ┆ 65132  │
+│ Tamil Nadu     ┆ 58641  │
+│ Bangalore      ┆ 56425  │
+│ Gujarat        ┆ 52961  │
+│ West Bengal    ┆ 52592  │
+│ Telangana      ┆ 51473  │
+│ Kolkata        ┆ 50179  │
+│ Hyderabad      ┆ 43508  │
+│ Pune           ┆ 41329  │
+│ Mumbai City    ┆ 34748  │
+│ Haryana        ┆ 33703  │
+│ Kerala         ┆ 32575  │
+│ Chennai        ┆ 30292  │
+│ Rajasthan      ┆ 29321  │
+│ Howrah         ┆ 27439  │
+│ Thane          ┆ 25548  │
+│ Ahmedabad      ┆ 23798  │
+│ South Delhi    ┆ 22002  │
+│ Bihar          ┆ 21481  │
+│ Madhya Pradesh ┆ 20684  │
+└────────────────┴────────┘
+[India] dup (core name, first address part): 2908
+
+######## leakage checks (train)
+corr(S1 id num, match id num): 0.00014048660961862598
+corr(S1 row, match row): 0.00010095123671304146
+S1 ids appear in S2/S3 id numbers? overlap of numeric parts: 15881
+GT file row order vs S1 file row order corr: 0.00034290168113575945

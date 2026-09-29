@@ -1,0 +1,20 @@
+{
+ "s2name": "s2_blend_v6v6t_frv6",
+ "thr": 0.725,
+ "thr_by_country": {
+  "US": 0.65,
+  "India": 0.675,
+  "France": 0.55
+ },
+ "swap_veto": [
+  "France"
+ ],
+ "add_drop_noise": [
+  "France"
+ ],
+ "empty_rescue": 0.35,
+ "note": "v6fr3z55: v6fr3z with France threshold 0.55 (France-only probe; count model 0.60->0.55: French recall +0.0015, extras +0.0003/S1); US/India byte-identical to v6fr3z",
+ "swap_veto_final": [
+  "France"
+ ]
+}

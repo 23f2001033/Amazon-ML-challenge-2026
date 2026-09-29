@@ -1,0 +1,5 @@
+{
+ "thr": 0.7,
+ "decision": "thr",
+ "note": "v6rc2: v6 stage 1 + rich stage 2 (val+wide) with cross-encoders: v1 + ce2=/home/ubuntu/er/ce/ce2v6/band_{kind}_ce.parquet"
+}
